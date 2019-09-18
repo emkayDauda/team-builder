@@ -22,7 +22,7 @@ const StyledForm = styled.form`
 `
 
 export default function Form(props){
-    const {onNameChanged, onGenderChanged, onJobChanged, onAgeChanged} = props
+    const {onNameChanged, onGenderChanged, onJobChanged, onAgeChanged, onSubmit} = props
     const {name, age, gender, job} = props.teamMemberForm
     return (
         <StyledForm>
@@ -39,7 +39,7 @@ export default function Form(props){
             <label>Job</label>
             <input value={job} onChange={onJobChanged}/>
 
-            <button>Submit</button>
+            <button onClick={onSubmit}>Submit</button>
 
         </StyledForm>
     );

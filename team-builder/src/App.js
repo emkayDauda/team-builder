@@ -13,18 +13,18 @@ const initialFriendForm = {
   job: ''
 }
 
+const initalTeam = [
+  {name: "Maaruf", age: 23, gender:"male", job:"student"},
+  {name: "Dani", age: 23, gender:"female", job:"student"},
+  {name: "Richany", age: 23, gender:"female", job:"student"},
+]
+
 
 function App() {
   const [teamMemberForm, setTeamMemberForm] = useState(initialFriendForm)
-  const [teamMembers, setTeamMembers] = useState([{
-    age: "24",
-    name: "Maaruf",
-    job: "Student",
-    gender: "male"
-  }])
+  const [teamMembers, setTeamMembers] = useState(initalTeam)
 
 const onNameChanged = e => {
-  console.log(e.target.value);
   
   setTeamMemberForm({
     ...teamMemberForm,
@@ -42,12 +42,27 @@ const onAgeChanged = e => {
       ...teamMemberForm,
       gender: e.target.value
     })
+    // console.log(teamMemberForm)
   }
 const onJobChanged = e => {
   setTeamMemberForm({
     ...teamMemberForm,
     job: e.target.value
   })
+}
+
+const saveMember = e => {
+  e.preventDefault();
+
+  const newMember = {
+    name: teamMemberForm.name,
+    age: teamMemberForm.age,
+    job: teamMemberForm.job,
+    gender: teamMemberForm.gender,
+  }
+const newMembers = teamMembers.concat(newMember)
+  setTeamMembers(newMembers)
+  setTeamMemberForm(initialFriendForm)
 }
 
   return (
@@ -58,10 +73,12 @@ const onJobChanged = e => {
      onAgeChanged = {onAgeChanged}
      onGenderChanged = {onGenderChanged}
      onJobChanged = {onJobChanged}
+     onSubmit = {saveMember}
      />
 
      {
        teamMembers.map(member => <TeamMember person={member}/>)
+      
      }
     </div>
   );
