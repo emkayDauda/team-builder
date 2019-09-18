@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import male from '../../images/man.svg'
-import female from '../../images/girl-avatar.svg'
+import male from '../images/man.svg'
+import female from '../images/girl-avatar.svg'
 
 
 
@@ -9,7 +9,7 @@ export default function TeamMember({person}){
     const src = person.gender === 'male' ? male : female;
 
     const StyledPerson = styled.div`
-    border: .2rem solid white;
+    border: .2rem solid green;
     border-radius: 3rem;
     padding-top: 2.5rem;
     width: 30%;
@@ -23,7 +23,7 @@ export default function TeamMember({person}){
     }
 
     p {
-        color: white;
+        color: green;
     }
 
 `

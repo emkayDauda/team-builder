@@ -2,7 +2,9 @@ import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Form from './components/Form'
+import TeamMember from './components/TeamMember';
+
+import Form from './components/Form';
 
 const initialFriendForm = {
   name: '',
@@ -14,7 +16,12 @@ const initialFriendForm = {
 
 function App() {
   const [teamMemberForm, setTeamMemberForm] = useState(initialFriendForm)
-  const [teamMembers, setTeamMembers] = useState([])
+  const [teamMembers, setTeamMembers] = useState([{
+    age: "24",
+    name: "Maaruf",
+    job: "Student",
+    gender: "male"
+  }])
 
 const onNameChanged = e => {
   console.log(e.target.value);
@@ -54,7 +61,7 @@ const onJobChanged = e => {
      />
 
      {
-       
+       teamMembers.map(member => <TeamMember person={member}/>)
      }
     </div>
   );
