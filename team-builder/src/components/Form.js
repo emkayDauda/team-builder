@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
 
 
@@ -22,8 +22,8 @@ const StyledForm = styled.form`
 `
 
 export default function Form(props){
-    const {onNameChanged, onGenderChanged, onroleChanged, onemailChanged, onSubmit} = props;
-    const {name, email, gender, role} = props.teamMemberForm;
+    const {onNameChanged, onGenderChanged, onroleChanged, onemailChanged, onSubmit, memberToEdit} = props;
+    let {name, email, gender, role} = props.teamMemberForm;    
 
     const isDisabled = () => {
         if (!name || !email || !gender || !role) {
@@ -31,6 +31,13 @@ export default function Form(props){
         }
         return false;
       };
+
+      useEffect(() => {
+          if (memberToEdit){
+              name = memberToEdit.name
+          }
+          console.log(memberToEdit)
+      }, [memberToEdit])
     return (
         <StyledForm>
             <label>Name</label>

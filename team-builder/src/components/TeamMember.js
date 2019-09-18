@@ -5,17 +5,15 @@ import female from '../images/girl-avatar.svg'
 
 
 
-export default function TeamMember({person}){
+export default function TeamMember({person, setMember}){
     const src = person.gender === 'male' ? male : female;
 
     const StyledPerson = styled.div`
     border: .2rem solid green;
     border-radius: 3rem;
-    padding-top: 2.5rem;
+    padding: 2.5rem;
     width: 30%;
     margin: 1.3rem 1rem;
-
-    background: grey;
 
     img {
         width: 85%;
@@ -26,6 +24,17 @@ export default function TeamMember({person}){
 
     p {
         color: green;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between
+    }
+
+    button {
+        border-radius: 5px;
+        margin: 3px auto;
+        background: none;
     }
 
 `
@@ -44,6 +53,7 @@ export default function TeamMember({person}){
                 <p>Role: {person.role}</p>
             </div>
             <p>Gender: {person.gender}</p>
+            <button onClick={() => setMember(person)}>Edit Member</button>
         </StyledPerson>
     )
 }

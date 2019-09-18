@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import uuid from 'uuid';
 import './App.css';
+import styled from 'styled-components';
 
 import TeamMember from './components/TeamMember';
 
@@ -52,6 +53,11 @@ const onroleChanged = e => {
   })
 }
 
+const TeamMembers = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`
+
 const saveMember = e => {
   e.preventDefault();
 
@@ -78,10 +84,12 @@ const newMembers = teamMembers.concat(newMember)
      memberToEdit ={memberToEdit}
      />
 
+     <TeamMembers>
      {
-       teamMembers.map(member => <TeamMember person={member}/>)
+       teamMembers.map(member => <TeamMember person={member} setMember={setMember}/>)
       
      }
+     </TeamMembers>
     </div>
   );
 }
