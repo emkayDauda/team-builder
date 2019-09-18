@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import logo from './logo.svg';
+import uuid from 'uuid';
 import './App.css';
 
 import TeamMember from './components/TeamMember';
@@ -14,9 +14,9 @@ const initialFriendForm = {
 }
 
 const initalTeam = [
-  {name: "Maaruf", email: 'an@Email.mail', gender:"male", role:"student"},
-  {name: "Dani", email: 'sweet@sweetemail.com', gender:"female", role:"student"},
-  {name: "Richany", email: 'say@waht.com', gender:"female", role:"student"},
+  {id: uuid(), name: "Maaruf", email: 'an@Email.mail', gender:"male", role:"student"},
+  {id: uuid(), name: "Dani", email: 'sweet@sweetemail.com', gender:"female", role:"student"},
+  {id: uuid(), name: "Richany", email: 'say@waht.com', gender:"female", role:"student"},
 ]
 
 
