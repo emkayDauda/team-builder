@@ -22,8 +22,15 @@ const StyledForm = styled.form`
 `
 
 export default function Form(props){
-    const {onNameChanged, onGenderChanged, onroleChanged, onemailChanged, onSubmit} = props
-    const {name, email, gender, role} = props.teamMemberForm
+    const {onNameChanged, onGenderChanged, onroleChanged, onemailChanged, onSubmit} = props;
+    const {name, email, gender, role} = props.teamMemberForm;
+
+    const isDisabled = () => {
+        if (!name || !email || !gender || !role) {
+          return true;
+        }
+        return false;
+      };
     return (
         <StyledForm>
             <label>Name</label>
@@ -39,7 +46,7 @@ export default function Form(props){
             <label>Role</label>
             <input value={role} onChange={onroleChanged}/>
 
-            <button onClick={onSubmit}>Submit</button>
+            <button onClick={onSubmit} disabled={isDisabled()}>Submit</button>
 
         </StyledForm>
     );

@@ -23,6 +23,7 @@ const initalTeam = [
 function App() {
   const [teamMemberForm, setTeamMemberForm] = useState(initialFriendForm)
   const [teamMembers, setTeamMembers] = useState(initalTeam)
+  const [memberToEdit, setMember] = useState()
 
 const onNameChanged = e => {
   
@@ -74,6 +75,7 @@ const newMembers = teamMembers.concat(newMember)
      onGenderChanged = {onGenderChanged}
      onroleChanged = {onroleChanged}
      onSubmit = {saveMember}
+     memberToEdit ={memberToEdit}
      />
 
      {
