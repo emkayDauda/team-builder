@@ -8,15 +8,15 @@ import Form from './components/Form';
 
 const initialFriendForm = {
   name: '',
-  age: '',
+  email: '',
   gender: '',
-  job: ''
+  role: ''
 }
 
 const initalTeam = [
-  {name: "Maaruf", age: 23, gender:"male", job:"student"},
-  {name: "Dani", age: 23, gender:"female", job:"student"},
-  {name: "Richany", age: 23, gender:"female", job:"student"},
+  {name: "Maaruf", email: 23, gender:"male", role:"student"},
+  {name: "Dani", email: 23, gender:"female", role:"student"},
+  {name: "Richany", email: 23, gender:"female", role:"student"},
 ]
 
 
@@ -31,10 +31,10 @@ const onNameChanged = e => {
     name: e.target.value
   })
 }
-const onAgeChanged = e => {
+const onemailChanged = e => {
   setTeamMemberForm({
     ...teamMemberForm,
-    age: e.target.value
+    email: e.target.value
   })
 }
   const onGenderChanged = e => {
@@ -44,10 +44,10 @@ const onAgeChanged = e => {
     })
     // console.log(teamMemberForm)
   }
-const onJobChanged = e => {
+const onroleChanged = e => {
   setTeamMemberForm({
     ...teamMemberForm,
-    job: e.target.value
+    role: e.target.value
   })
 }
 
@@ -56,8 +56,8 @@ const saveMember = e => {
 
   const newMember = {
     name: teamMemberForm.name,
-    age: teamMemberForm.age,
-    job: teamMemberForm.job,
+    email: teamMemberForm.email,
+    role: teamMemberForm.role,
     gender: teamMemberForm.gender,
   }
 const newMembers = teamMembers.concat(newMember)
@@ -70,9 +70,9 @@ const newMembers = teamMembers.concat(newMember)
      <Form 
      teamMemberForm={teamMemberForm}
      onNameChanged ={onNameChanged}
-     onAgeChanged = {onAgeChanged}
+     onemailChanged = {onemailChanged}
      onGenderChanged = {onGenderChanged}
-     onJobChanged = {onJobChanged}
+     onroleChanged = {onroleChanged}
      onSubmit = {saveMember}
      />
 

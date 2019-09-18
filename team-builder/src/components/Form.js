@@ -22,22 +22,22 @@ const StyledForm = styled.form`
 `
 
 export default function Form(props){
-    const {onNameChanged, onGenderChanged, onJobChanged, onAgeChanged, onSubmit} = props
-    const {name, age, gender, job} = props.teamMemberForm
+    const {onNameChanged, onGenderChanged, onroleChanged, onemailChanged, onSubmit} = props
+    const {name, email, gender, role} = props.teamMemberForm
     return (
         <StyledForm>
             <label>Name</label>
             <input value={name} onChange ={onNameChanged}/>
 
-            <label>Age</label>
-            <input value={age} onChange ={onAgeChanged}/>
+            <label>email</label>
+            <input value={email} onChange ={onemailChanged}/>
 
             <label>Gender</label>
             <input value={gender} onChange={onGenderChanged}/>
 
 
-            <label>Job</label>
-            <input value={job} onChange={onJobChanged}/>
+            <label>role</label>
+            <input value={role} onChange={onroleChanged}/>
 
             <button onClick={onSubmit}>Submit</button>
 
