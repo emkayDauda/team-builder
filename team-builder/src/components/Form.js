@@ -29,14 +29,14 @@ export default function Form(props){
             <label>Name</label>
             <input value={name} onChange ={onNameChanged}/>
 
-            <label>email</label>
+            <label>Email</label>
             <input value={email} onChange ={onemailChanged}/>
 
             <label>Gender</label>
             <input value={gender} onChange={onGenderChanged}/>
 
 
-            <label>role</label>
+            <label>Role</label>
             <input value={role} onChange={onroleChanged}/>
 
             <button onClick={onSubmit}>Submit</button>

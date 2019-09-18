@@ -14,9 +14,9 @@ const initialFriendForm = {
 }
 
 const initalTeam = [
-  {name: "Maaruf", email: 23, gender:"male", role:"student"},
-  {name: "Dani", email: 23, gender:"female", role:"student"},
-  {name: "Richany", email: 23, gender:"female", role:"student"},
+  {name: "Maaruf", email: 'an@Email.mail', gender:"male", role:"student"},
+  {name: "Dani", email: 'sweet@sweetemail.com', gender:"female", role:"student"},
+  {name: "Richany", email: 'say@waht.com', gender:"female", role:"student"},
 ]
 
 

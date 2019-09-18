@@ -15,6 +15,8 @@ export default function TeamMember({person}){
     width: 30%;
     margin: 1.3rem 1rem;
 
+    background: grey;
+
     img {
         width: 85%;
         height: 25rem;
@@ -38,8 +40,8 @@ export default function TeamMember({person}){
             <img src={src} alt=""/>
             <Name>{person.name}</Name>
             <div>
-                <p>Age: {person.age}</p>
-                <p>Job: {person.job}</p>
+                <p>Email: {person.email}</p>
+                <p>Role: {person.role}</p>
             </div>
             <p>Gender: {person.gender}</p>
         </StyledPerson>
